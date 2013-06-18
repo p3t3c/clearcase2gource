@@ -1,6 +1,4 @@
 #!/usr/bin/python
-import re
-
 """
    Take the output of the clear case history command and turn it into something usable by gource
 
@@ -24,13 +22,14 @@ import re
    gource gource.log
    You may want to customize the gource parameters.
 """
+ 
+import sys
+import time
+import re
 
 fileTypesWeCareAbout = [ 'compressed_file', 'compressed_text_file', 'file',
 'html', 'text_file', 'xml']
 
- 
-import sys
-import time
 
 def processDate(date):
    """Process the date string into a unix time. Note location isn't handle correctly it goes into local time"""
